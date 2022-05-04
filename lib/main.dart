@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:graphql_flutter/graphql_flutter.dart';
 import 'booklist.dart';
 import 'history.dart';
 import 'homepage.dart';
@@ -28,14 +27,14 @@ class MBNB extends StatefulWidget {
   State<MBNB> createState() => _MBNBState();
 }
 
+final List<String> title = <String>['HOME', 'COUNTRY LIST', 'HISTORY'];
+final List<Widget> TapFunction = <Widget>[
+  MyHomePage(),
+  BookList(),
+  History()
+];
 class _MBNBState extends State<MBNB> {
   int  _selectedIndex=0;
-  final List<String> title = <String>['HOME', 'COUNTRY LIST', 'HISTORY'];
-  final List<Widget> TapFunction = <Widget>[
-    MyHomePage(),
-    BookList(),
-    History()
-  ];
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
